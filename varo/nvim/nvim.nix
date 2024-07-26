@@ -21,10 +21,6 @@ programs.neovim =
 
     plugins = with pkgs.vimPlugins; [
 
-      {
-        plugin = nvim-lspconfig;
-        config = toLuaFile ./plugin/lsp.lua;
-      }
 
       {
         plugin = comment-nvim;
@@ -61,7 +57,6 @@ programs.neovim =
       lualine-nvim
       nvim-web-devicons
 
-      vim-nix
       cmp-buffer
       cmp-path
       cmp-cmdline
@@ -79,6 +74,12 @@ programs.neovim =
       }
 
       vim-nix
+
+
+      {
+        plugin = nvim-lspconfig;
+        config = toLuaFile ./plugin/lsp.lua;
+     }
 
       # {
       #   plugin = vimPlugins.own-onedark-nvim;
