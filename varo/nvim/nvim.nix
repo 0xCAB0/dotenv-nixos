@@ -14,8 +14,8 @@ programs.neovim =
 
     extraPackages = with pkgs; [
       lua-language-server
-     # rnix-lsp
       xclip
+      nil
       wl-clipboard
     ];
 
@@ -62,12 +62,13 @@ programs.neovim =
       nvim-web-devicons
 
       vim-nix
-      nvim-cmp
-      cmp-nvim-lsp
+      {
+      	plugin = cmp-nvim-lsp;
+	config = require('cmp_nvim_lsp');
+      }
       cmp-buffer
       cmp-path
       cmp-cmdline
-      #LuaSnip
 
       {
         plugin = (nvim-treesitter.withPlugins (p: [
@@ -83,10 +84,10 @@ programs.neovim =
 
       vim-nix
 
-      # {
-      #   plugin = vimPlugins.own-onedark-nvim;
-      #   config = "colorscheme onedark";
-      # }
+       {
+         plugin = vimPlugins.own-onedark-nvim;
+         config = "colorscheme onedark";
+       }
     ];
 
     extraLuaConfig = ''
