@@ -1,10 +1,11 @@
+
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.o.clipboard = 'unnamedplus'
 
 vim.o.number = true
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 vim.o.signcolumn = 'yes'
 

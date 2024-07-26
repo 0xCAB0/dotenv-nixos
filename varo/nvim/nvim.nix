@@ -62,10 +62,6 @@ programs.neovim =
       nvim-web-devicons
 
       vim-nix
-      {
-      	plugin = cmp-nvim-lsp;
-	config = require('cmp_nvim_lsp');
-      }
       cmp-buffer
       cmp-path
       cmp-cmdline
@@ -84,10 +80,10 @@ programs.neovim =
 
       vim-nix
 
-       {
-         plugin = vimPlugins.own-onedark-nvim;
-         config = "colorscheme onedark";
-       }
+      # {
+      #   plugin = vimPlugins.own-onedark-nvim;
+      #   config = "colorscheme onedark";
+      # }
     ];
 
     extraLuaConfig = ''
