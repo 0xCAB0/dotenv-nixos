@@ -67,7 +67,7 @@ programs.neovim =
       cmp-buffer
       cmp-path
       cmp-cmdline
-      LuaSnip
+      #LuaSnip
 
       {
         plugin = (nvim-treesitter.withPlugins (p: [
