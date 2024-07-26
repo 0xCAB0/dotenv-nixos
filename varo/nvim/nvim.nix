@@ -61,6 +61,14 @@ programs.neovim =
       lualine-nvim
       nvim-web-devicons
 
+      vim-nix
+      nvim-cmp
+      cmp-nvim-lsp
+      cmp-buffer
+      cmp-path
+      cmp-cmdline
+      LuaSnip
+
       {
         plugin = (nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
