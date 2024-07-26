@@ -14,7 +14,7 @@ programs.neovim =
 
     extraPackages = with pkgs; [
       lua-language-server
-      rnix-lsp
+     # rnix-lsp
       xclip
       wl-clipboard
     ];
