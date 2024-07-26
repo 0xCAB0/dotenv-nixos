@@ -40,7 +40,8 @@
   imports = [
     ./zsh/zsh.nix
     ./oh-my-posh/oh-my-posh.nix
-    ./direnv/direnv.nix  
+    ./direnv/direnv.nix
+    ./nvim/nvim.nix
 	];	
 
 }
