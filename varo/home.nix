@@ -10,6 +10,7 @@
     lsd
     home-manager
     android-studio
+    vscode
   ];
 
   home.file = {
@@ -26,7 +27,8 @@
 
   home.shellAliases = {
 	cd = "z";
-	nixos-update = "just -f /etc/nixos/justfile switch";
+        nixos-update = "just -f /etc/nixos/justfile switch";
+        create_flake = "$ echo \"use flake\" >> .envrc && direnv allow";
   };
 
   programs.home-manager.enable = true;
