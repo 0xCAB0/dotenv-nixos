@@ -44,6 +44,7 @@
     ./oh-my-posh/oh-my-posh.nix
     ./direnv/direnv.nix
     ./nvim/nvim.nix
+    ./vscode/vscode.nix
 	];	
 
 }
