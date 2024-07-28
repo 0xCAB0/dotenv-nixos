@@ -41,20 +41,6 @@
 networking.wg-quick.interfaces = {
     wg0 = {
       configFile = "/etc/wireguard/wg0.conf";
-      address = [ "10.66.66.6/32" "fd42:42:42::6/128" ];
-      dns = [ "10.0.0.1" "1.1.1.1"];
-      privateKeyFile = "/root/wireguard/privatekey";
-      listenPort = 63314;     
-      autostart = false;
-      peers = [
-        {
-          publicKey = "c/n7E4KboVRnHmhFLoWODRmrRLgCvjuwKUI719kK6lc=";
-          presharedKeyFile = "/root/wireguard/presharedkey";
-          allowedIPs = [ "0.0.0.0/0" "192.168.1.0/24" "::/0" ];
-          endpoint = "79.117.34.98:63314";
-          persistentKeepalive = 25;
-        }
-      ];
     };
   };
   # Set your time zone.
@@ -86,24 +72,14 @@ networking.wg-quick.interfaces = {
   environment.gnome.excludePackages = (with pkgs; [
   gnome-photos
   gnome-tour
-  gedit # text editor
 ]) ++ (with pkgs.gnome; [
-  gnome-music
-  yelp
   epiphany # web browser
   geary # email reader
   evince # document viewer
   gnome-characters
   gnome-contacts
   gnome-weather
-  gnome-maps
-  totem # video player
-  tali # poker game
-  iagno # go game
-  hitori # sudoku game
-  atomix # puzzle game
 ]);
-
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -126,7 +102,7 @@ networking.wg-quick.interfaces = {
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -143,7 +119,6 @@ networking.wg-quick.interfaces = {
     description = "0xCAB0";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
-    #  thunderbird
     ];
     shell = pkgs.zsh;
   };
@@ -176,34 +151,14 @@ networking.wg-quick.interfaces = {
     just 
     tree
     neovim
-   ## Browsers
+  ## Browsers
    firefox
    brave
 
   ## Social Network
-
-  discord
-  tdesktop
+    discord
+    tdesktop
   ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
