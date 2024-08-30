@@ -11,6 +11,7 @@
     home-manager
     android-studio
     vscode
+    asdf-vm
   ];
 
   home.file = {

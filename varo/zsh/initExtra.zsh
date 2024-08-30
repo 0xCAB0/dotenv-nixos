@@ -27,3 +27,4 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 eval "$(zoxide init zsh)"
+. "$HOME/.nix-profile/share/asdf-vm/asdf.zsh"
