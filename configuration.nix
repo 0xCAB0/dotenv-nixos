@@ -79,6 +79,7 @@ networking.wg-quick.interfaces = {
   gnome-characters
   gnome-contacts
   gnome-weather
+  
 ]);
 
   # Configure keymap in X11
@@ -151,6 +152,8 @@ networking.wg-quick.interfaces = {
     just 
     tree
     neovim
+    libreoffice-qt
+    hunspell
   ## Browsers
    firefox
    brave
