@@ -35,7 +35,8 @@
 
   # Wireguard
   networking.firewall = {
-    allowedUDPPorts = [ 63314 ]; # Clients and peers can use the same port, see listenport
+    allowedUDPPorts = [ 63314 ];
+    allowedTCPPorts = [ 8001 ];
   };
 
 networking.wg-quick.interfaces = {
@@ -123,6 +124,7 @@ networking.wg-quick.interfaces = {
     ];
     shell = pkgs.zsh;
   };
+
   
 
   fonts.packages = with pkgs; [
@@ -145,15 +147,22 @@ networking.wg-quick.interfaces = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    iw
+    gnumake
+    gnupg
+    libgccjit
     vim
     wget
     curl
+    postgresql
     git
     just 
     tree
     neovim
     libreoffice-qt
     hunspell
+    unzip
+    zip
   ## Browsers
    firefox
    brave

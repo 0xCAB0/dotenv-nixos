@@ -12,6 +12,7 @@
     android-studio
     vscode
     asdf-vm
+    wireshark
   ];
 
   home.file = {
