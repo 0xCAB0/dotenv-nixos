@@ -32,7 +32,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
+  networking.nftables.enable = true;
   # Wireguard
   networking.firewall = {
     allowedUDPPorts = [ 63314 ];
@@ -143,6 +143,7 @@ networking.wg-quick.interfaces = {
   virtualisation.docker = {
     enable = true;
   };
+
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

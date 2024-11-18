@@ -13,6 +13,9 @@
     vscode
     asdf-vm
     wireshark
+    postman
+    terraform
+    xclip
   ];
 
   home.file = {
@@ -47,6 +50,7 @@
     ./direnv/direnv.nix
     ./nvim/nvim.nix
     ./vscode/vscode.nix
+    ./ngrok/flake.nix
 	];	
 
 }
