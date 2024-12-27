@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    ngrok.url = "github:ngrok/ngrok-nix";
     plugin-onedark.url = "github:navarasu/onedark.nvim";
     plugin-onedark.flake = false;
   };

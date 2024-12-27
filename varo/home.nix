@@ -16,6 +16,8 @@
     postman
     terraform
     xclip
+    texliveTeTeX
+    nmap
   ];
 
   home.file = {
@@ -50,7 +52,7 @@
     ./direnv/direnv.nix
     ./nvim/nvim.nix
     ./vscode/vscode.nix
-    ./ngrok/flake.nix
-	];	
+    # ./zed/zed.nix
+  ];	
 
 }
