@@ -18,6 +18,7 @@
     xclip
     texliveTeTeX
     nmap
+    obsidian
   ];
 
   home.file = {
@@ -50,7 +51,7 @@
     ./zsh/zsh.nix
     ./oh-my-posh/oh-my-posh.nix
     ./direnv/direnv.nix
-    ./nvim/nvim.nix
+    ./nvim.nix
     ./vscode/vscode.nix
     # ./zed/zed.nix
   ];	

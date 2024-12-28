@@ -1,19 +1,27 @@
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
-vim.o.clipboard = 'unnamedplus'
+local g = vim.g
 
-vim.o.number = true
-vim.o.relativenumber = true
+g.mapleader = ' '
 
-vim.o.signcolumn = 'yes'
 
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+local o = vim.o
 
-vim.o.updatetime = 300
+o.expandtab = true -- expand tab input with spaces characters
+o.smartindent = true -- syntax aware indentations for newline inserts
+o.number = true
+-- vim.o.clipboard = 'unnamedplus'
+-- vim.o.relativenumber = true
 
-vim.o.termguicolors = true
+o.signcolumn = 'yes'
 
-vim.o.mouse = 'a'
+o.tabstop = 4 -- num of space characters per tab
+o.shiftwidth = 4 -- spaces per indentation level
+
+o.updatetime = 300
+
+o.termguicolors = true
+
+o.mouse = 'a'
+
+o.clipboard = "unnamedplus"

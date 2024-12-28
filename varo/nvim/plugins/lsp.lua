@@ -23,9 +23,13 @@ local on_attach = function(_, bufnr)
   end, {})
 end
 
-local capabilities = = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require('neodev').setup()
+
+
+-- Lua Lsp
 require('lspconfig').lua_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -41,7 +45,22 @@ require('lspconfig').lua_ls.setup {
     }
 }
 
-require('lspconfig').rnix.setup {
+-- Nix Lsp
+require('lspconfig').nil_ls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+}
+
+-- Rust Lsp
+vim.g.rustfmt_autosave = 1
+require'lspconfig'.rust_analyzer.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+-- Elixir Lsp
+require'lspconfig'.elixirls.setup{
+    -- Unix
+    cmd = { "elixir-ls" };
+
 }
