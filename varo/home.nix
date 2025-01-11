@@ -54,6 +54,8 @@
     ./direnv/direnv.nix
     ./nvim.nix
     ./vscode/vscode.nix
+    ./git.nix
+    
     # ./zed/zed.nix
   ];	
 

@@ -41,7 +41,7 @@
 
 networking.wg-quick.interfaces = {
     wg0 = {
-      configFile = "/etc/wireguard/proton.conf";
+      configFile = "/etc/wireguard/wg0.conf";
     };
   };
   # Set your time zone.
@@ -73,14 +73,12 @@ networking.wg-quick.interfaces = {
   environment.gnome.excludePackages = (with pkgs; [
   gnome-photos
   gnome-tour
-]) ++ (with pkgs.gnome; [
   epiphany # web browser
-  geary # email reader
+geary # email reader
   evince # document viewer
   gnome-characters
   gnome-contacts
   gnome-weather
-  
 ]);
 
   # Configure keymap in X11
@@ -128,7 +126,8 @@ networking.wg-quick.interfaces = {
   
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "Hack" ]; })
+        nerd-fonts.hack
+        nerd-fonts.fira-code
   ];
 
   home-manager = {
