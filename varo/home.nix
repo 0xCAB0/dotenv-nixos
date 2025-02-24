@@ -17,9 +17,9 @@
     postman
     terraform
     xclip
-    texliveTeTeX
     nmap
     obsidian
+    pandoc
   ];
 
   home.file = {
@@ -55,7 +55,7 @@
     ./nvim.nix
     ./vscode/vscode.nix
     ./git.nix
-    
+        #./pandoc.nix 
     # ./zed/zed.nix
   ];	
 
