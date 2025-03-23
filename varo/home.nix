@@ -7,7 +7,7 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-    espanso
+    act
     lsd
     home-manager
     android-studio
