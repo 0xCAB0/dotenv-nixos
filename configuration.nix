@@ -40,9 +40,9 @@
   };
 
 networking.wg-quick.interfaces = {
-        wg0 = {
-        configFile = "/etc/wireguard/wg0.conf";
-        };
+         wg0 = {
+            configFile = "/etc/wireguard/wg0.conf";
+         };
         # wg1 = {
         # configFile = "/etc/wireguard/wg1.conf";
         # };
@@ -77,7 +77,7 @@ networking.wg-quick.interfaces = {
   gnome-photos
   gnome-tour
   epiphany # web browser
-geary # email reader
+  geary # email reader
   evince # document viewer
   gnome-characters
   gnome-contacts
@@ -182,5 +182,46 @@ geary # email reader
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
+  
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
 
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+
+    ## Core libraries most linux have
+    glib
+    nss
+    nspr
+    util-linux
+    alsa-lib
+    dbus.lib
+    systemd
+
+    # gtk3-x11
+    # pango
+    # atk
+    # cairo
+    # gdk-pixbuf
+    # xorg.libX11
+    # xorg.libxcb
+    # xorg.libXcomposite
+    # xorg.libXcursor
+    # xorg.libXdamage
+    # xorg.libXext
+    # xorg.libXfixes
+    # xorg.libXi
+    # xorg.libXrender
+    # xorg.libxshmfence
+    # xorg.libXtst
+    # xorg_sys_opengl
+    # xorg.libXrandr
+    # xorg.libXScrnSaver
+    # at-spi2-atk
+    # at-spi2-core
+    # libpulseaudio
+    # vivaldi-ffmpeg-codecs
+    # libxkbcommon
+    # mesa
+  ];
 }

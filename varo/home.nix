@@ -8,6 +8,7 @@
 
   home.packages = with pkgs; [
     act
+    protonvpn-gui
     lsd
     home-manager
     android-studio
