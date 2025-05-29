@@ -166,6 +166,7 @@ networking.wg-quick.interfaces = {
     hunspell
     unzip
     zip
+    flatpak
   ## Browsers
    firefox
    brave
