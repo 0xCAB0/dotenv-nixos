@@ -56,6 +56,9 @@
     ./nvim.nix
     ./vscode/vscode.nix
     ./git.nix
+    ./tmux.nix
+    ./alacritty.nix
+    ./helix.nix
         #./pandoc.nix 
     # ./zed/zed.nix
   ];	
