@@ -40,9 +40,9 @@
   };
 
 networking.wg-quick.interfaces = {
-         wg0 = {
-            configFile = "/etc/wireguard/wg0.conf";
-         };
+        # wg0 = {
+        #    configFile = "/etc/wireguard/wg0.conf";
+        # };
         # wg1 = {
         # configFile = "/etc/wireguard/wg1.conf";
         # };

@@ -21,6 +21,7 @@
     nmap
     obsidian
     pandoc
+    calibre
   ];
 
   home.file = {
