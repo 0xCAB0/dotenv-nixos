@@ -1,4 +1,4 @@
-
+if [ "$TMUX" = "" ]; then tmux; fi
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" ma=44\;39
 

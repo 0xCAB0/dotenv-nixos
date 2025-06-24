@@ -33,20 +33,22 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.nftables.enable = true;
+  
   # Wireguard
   networking.firewall = {
+    checkReversePath = "loose";
     allowedUDPPorts = [ 63314 ];
     allowedTCPPorts = [ 8001 ];
   };
 
-networking.wg-quick.interfaces = {
+    #networking.wg-quick.interfaces = {
         # wg0 = {
         #    configFile = "/etc/wireguard/wg0.conf";
         # };
         # wg1 = {
         # configFile = "/etc/wireguard/wg1.conf";
         # };
-  };
+        #};
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
 
