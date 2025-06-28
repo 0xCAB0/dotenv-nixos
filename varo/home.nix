@@ -22,6 +22,7 @@
     obsidian
     pandoc
     calibre
+    zed
   ];
 
   home.file = {
