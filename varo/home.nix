@@ -22,7 +22,6 @@
     obsidian
     pandoc
     calibre
-    zed-editor
   ];
 
   home.file = {
@@ -62,7 +61,7 @@
     ./alacritty.nix
     ./helix.nix
         #./pandoc.nix 
-    # ./zed/zed.nix
+    ./zed/zed.nix
   ];	
 
 }
