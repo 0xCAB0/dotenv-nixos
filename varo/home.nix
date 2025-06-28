@@ -22,7 +22,7 @@
     obsidian
     pandoc
     calibre
-    zed
+    zed-editor
   ];
 
   home.file = {
