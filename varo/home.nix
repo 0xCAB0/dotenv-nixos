@@ -22,6 +22,7 @@
     obsidian
     pandoc
     calibre
+    web-eid-app
   ];
 
   home.file = {
