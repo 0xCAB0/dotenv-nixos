@@ -13,7 +13,6 @@
     home-manager
     android-studio
     vscode
-    asdf-vm
     wireshark
     postman
     terraform
