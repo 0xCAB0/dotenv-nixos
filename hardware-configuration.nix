@@ -11,61 +11,19 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/lib/modules/6.6.87.2-microsoft-standard-WSL2" =
-    { device = "none";
-      fsType = "overlay";
-    };
-
-  fileSystems."/mnt/wsl" =
+  fileSystems."/wsl" =
     { device = "none";
       fsType = "tmpfs";
     };
 
-  fileSystems."/usr/lib/wsl/drivers" =
-    { device = "drivers";
-      fsType = "9p";
+  fileSystems."/wslg" =
+    { device = "none";
+      fsType = "tmpfs";
     };
 
-  fileSystems."/" =
+  fileSystems."/wslg/distro" =
     { device = "/dev/disk/by-uuid/8fc6b3b8-5391-40aa-afbe-d7767eea75c7";
       fsType = "ext4";
-    };
-
-  fileSystems."/mnt/wslg" =
-    { device = "none";
-      fsType = "tmpfs";
-    };
-
-  fileSystems."/mnt/wslg/distro" =
-    { device = "";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/usr/lib/wsl/lib" =
-    { device = "none";
-      fsType = "overlay";
-    };
-
-  fileSystems."/tmp/.X11-unix" =
-    { device = "/mnt/wslg/.X11-unix";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/mnt/wslg/doc" =
-    { device = "none";
-      fsType = "overlay";
-    };
-
-  fileSystems."/mnt/c" =
-    { device = "C:\134";
-      fsType = "9p";
-    };
-
-  fileSystems."/mnt/wslg/run/user/1000" =
-    { device = "tmpfs";
-      fsType = "tmpfs";
     };
 
   swapDevices =
@@ -77,6 +35,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.eth0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

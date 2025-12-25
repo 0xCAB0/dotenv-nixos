@@ -53,7 +53,7 @@
   
   programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.varo = {
+  users.users.nixos = {
     isNormalUser = true;
     description = "0xCAB0";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
@@ -69,8 +69,7 @@
 
   home-manager = {
    extraSpecialArgs = {inherit inputs;};  
-   users."varo" = import ./varo/home.nix;
-
+   users."nixos" = import ./varo/home.nix;
   };
 
   # Allow unfree packages
@@ -96,18 +95,19 @@
     just 
     tree
     neovim
-    libreoffice-qt
-    hunspell
+    #libreoffice-qt
+    #hunspell
     unzip
     zip
     flatpak
-  ## Browsers
-   firefox
-   brave
+    kmod
+    ## Browsers
+    #firefox
+    #brave
 
   ## Social Network
-    discord
-    tdesktop
+    #discord
+    #tdesktop
   ];
 
   # This value determines the NixOS release from which the default
@@ -132,7 +132,7 @@
     alsa-lib
     dbus.lib
     systemd
-
+    llvmPackages.bintools
     # gtk3-x11
     # pango
     # atk

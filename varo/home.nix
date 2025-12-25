@@ -1,27 +1,27 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "varo";
-  home.homeDirectory = "/home/varo";
+  home.username = "nixos";
+  home.homeDirectory = "/home/nixos";
   nixpkgs.config.allowUnfree = true;
-  home.stateVersion = "24.05";
+  home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
     act
-    protonvpn-gui
+        #protonvpn-gui
     lsd
     home-manager
-    android-studio
+        #android-studio
     vscode
-    wireshark
-    postman
-    terraform
+        #wireshark
+        #postman
+        #terraform
     xclip
     nmap
-    obsidian
+        #obsidian
     pandoc
-    calibre
-    web-eid-app
+        #calibre
+        #web-eid-app
   ];
 
   home.file = {

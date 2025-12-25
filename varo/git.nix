@@ -14,12 +14,7 @@
       pull.rebase = false;
       commit.gpgsign = true;
       gpg.format = "ssh";
-      signing = {
-
-        key = "/home/varo/.ssh/id_github_signing_key.pub";
-        signByDefault = true;
-
-      };
+      user.signingkey = "/home/varo/.ssh/signing_id_github.pub";
     };
   };
 
