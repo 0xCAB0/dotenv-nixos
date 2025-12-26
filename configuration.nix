@@ -165,10 +165,6 @@
   ## Browsers
    firefox
    brave
-
-  ## Social Network
-    discord
-    telegram-desktop
   ];
 
   # This value determines the NixOS release from which the default

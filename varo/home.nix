@@ -7,13 +7,17 @@
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
-    act
-    protonvpn-gui
-    lsd
     home-manager
-    vscode
+    # Binaries
+    act
+    lsd
     xclip
-    web-eid-app
+
+    # Desktop application
+    protonvpn-gui
+    discord
+    telegram-desktop
+    vscode
   ];
 
   home.file = {
