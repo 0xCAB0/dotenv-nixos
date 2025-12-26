@@ -19,7 +19,12 @@
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+	{
+	 home-manager.useGlobalPkgs = true;
+         home-manager.useUserPackages = true;
+         home-manager.users.varo = ./varo/home.nix;
+	}
       ];
     };
   };
-}
+}	
