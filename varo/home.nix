@@ -12,20 +12,22 @@
     act
     lsd
     xclip
-
+    just
     # Desktop application
     protonvpn-gui
     discord
     telegram-desktop
-    vscode
   ];
 
   home.file = {
   };
-
+  
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  fonts.fontconfig.enable = true;
 
   programs.neovim = {
   	viAlias = true;

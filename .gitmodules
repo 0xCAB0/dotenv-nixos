@@ -1,3 +1,6 @@
 [submodule "assests/fallout-grub-theme"]
 	path = assests/fallout-grub-theme
 	url = https://github.com/shvchk/fallout-grub-theme
+[submodule "assets/fallout-grub-theme"]
+	path = assets/fallout-grub-theme
+	url = https://github.com/shvchk/fallout-grub-theme.git

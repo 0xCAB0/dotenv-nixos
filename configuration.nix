@@ -23,7 +23,7 @@
      useOSProber = true;
      device = "nodev";
      extraEntriesBeforeNixOS = true;
-     theme = "/etc/nixos/assests/fallout-grub-theme";
+     theme = "/etc/nixos/assets/fallout-grub-theme";
   };
 };
  
