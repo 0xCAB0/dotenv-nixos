@@ -2,7 +2,8 @@
 {
   programs.vscode = {
   enable = true;
-  extensions = with pkgs.vscode-extensions; [
+  profiles.default = {
+     extensions = with pkgs.vscode-extensions; [
       # Themes
       dracula-theme.theme-dracula
       # Editors
@@ -14,6 +15,7 @@
       rust-lang.rust-analyzer
       vadimcn.vscode-lldb
       mkhl.direnv
-  ];
+    ];
+   };
   };
 }

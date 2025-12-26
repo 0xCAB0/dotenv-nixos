@@ -7,7 +7,7 @@ programs.zsh = {
   syntaxHighlighting.enable = true;
   defaultKeymap = "viins";
   envExtra = builtins.readFile(./envExtra.zsh);
-  initExtra = builtins.readFile(./initExtra.zsh);
+  initContent = builtins.readFile(./initExtra.zsh);
   shellAliases = {
 	tree = "lsd --tree";
 	};

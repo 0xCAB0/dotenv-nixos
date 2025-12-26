@@ -71,8 +71,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   
 
   environment.gnome.excludePackages = (with pkgs; [
@@ -99,7 +99,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -114,9 +114,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-  
   programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.varo = {
@@ -127,8 +124,6 @@
     ];
     shell = pkgs.zsh;
   };
-
-  
 
   fonts.packages = with pkgs; [
         nerd-fonts.hack
@@ -173,7 +168,7 @@
 
   ## Social Network
     discord
-    tdesktop
+    telegram-desktop
   ];
 
   # This value determines the NixOS release from which the default
@@ -187,9 +182,6 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
 
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-
     ## Core libraries most linux have
     glib
     nss
@@ -199,30 +191,5 @@
     dbus.lib
     systemd
 
-    # gtk3-x11
-    # pango
-    # atk
-    # cairo
-    # gdk-pixbuf
-    # xorg.libX11
-    # xorg.libxcb
-    # xorg.libXcomposite
-    # xorg.libXcursor
-    # xorg.libXdamage
-    # xorg.libXext
-    # xorg.libXfixes
-    # xorg.libXi
-    # xorg.libXrender
-    # xorg.libxshmfence
-    # xorg.libXtst
-    # xorg_sys_opengl
-    # xorg.libXrandr
-    # xorg.libXScrnSaver
-    # at-spi2-atk
-    # at-spi2-core
-    # libpulseaudio
-    # vivaldi-ffmpeg-codecs
-    # libxkbcommon
-    # mesa
   ];
 }
