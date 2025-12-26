@@ -52,7 +52,6 @@
     ./tmux.nix
     ./alacritty.nix
     ./helix.nix
-        #./pandoc.nix 
     ./zed/zed.nix
   ];	
 
