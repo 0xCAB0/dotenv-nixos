@@ -13,10 +13,12 @@
     lsd
     xclip
     just
+    zoxide
     # Desktop application
     protonvpn-gui
     discord
     telegram-desktop
+    vscode
   ];
 
   home.file = {

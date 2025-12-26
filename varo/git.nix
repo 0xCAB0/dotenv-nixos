@@ -1,12 +1,13 @@
 {... }:
 
 {
-
   programs.git = {
     enable = true;
-    userName = "0xCAB0";
-    userEmail = "alvarocaboac2@gmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+	name = "0xCAB0";
+	email = "info@alvarocabo.com";	
+	};
       init.defaultBranch = "main";
       core.editor = "nvim";
       safe.directory = "/etc/nixos";
@@ -17,5 +18,4 @@
       user.signingKey= "~/.ssh/id_github_signing_key.pub";
     };
   };
-
 }

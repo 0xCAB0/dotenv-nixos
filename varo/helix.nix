@@ -61,7 +61,7 @@
         {
           name = "typst";
           formatter = {
-            command = "${lib.getExe pkgs.typstfmt}";
+            command = "${lib.getExe pkgs.typstyle}";
             args = [ ];
           };
           language-servers = [
