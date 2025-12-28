@@ -15,6 +15,21 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
+ 
+  # Enable mDNS  
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true; # Enable mDNS resolution in NSS (Name Service Switch)
+    # Optional but recommended:
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
 
   # Bootloader.
   boot.loader = {
