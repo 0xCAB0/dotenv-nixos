@@ -9,9 +9,11 @@ programs.zsh = {
   envExtra = builtins.readFile(./envExtra.zsh);
   initContent = builtins.readFile(./initExtra.zsh);
   shellAliases = {
+	copy = "xclip -selection clip";
 	tree = "lsd --tree";
+    gsudo = "sudo -E -u $(logname) git";
 	};
 };
 
 
-}
+} 

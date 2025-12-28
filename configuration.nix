@@ -2,38 +2,46 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader = {
-  efi = {
-    canTouchEfiVariables = false;
-    efiSysMountPoint = "/boot/EFI";
+    efi = {
+      canTouchEfiVariables = false;
+      efiSysMountPoint = "/boot/EFI";
+    };
+    grub = {
+      efiInstallAsRemovable = true;
+      efiSupport = true;
+      useOSProber = true;
+      device = "nodev";
+      extraEntriesBeforeNixOS = true;
+      theme = "/etc/nixos/assets/fallout-grub-theme";
+    };
   };
-  grub = {
-     efiInstallAsRemovable = true;
-     efiSupport = true;
-     useOSProber = true;
-     device = "nodev";
-     extraEntriesBeforeNixOS = true;
-     theme = "/etc/nixos/assets/fallout-grub-theme";
-  };
-};
- 
+
   networking.hostName = "nixos"; # Define your hostname.
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;
   networking.nftables.enable = true;
-  
+
   # Wireguard
   networking.firewall = {
     checkReversePath = "loose";
@@ -41,14 +49,14 @@
     allowedTCPPorts = [ 8001 ];
   };
 
-    #networking.wg-quick.interfaces = {
-        # wg0 = {
-        #    configFile = "/etc/wireguard/wg0.conf";
-        # };
-        # wg1 = {
-        # configFile = "/etc/wireguard/wg1.conf";
-        # };
-        #};
+  #networking.wg-quick.interfaces = {
+  # wg0 = {
+  #    configFile = "/etc/wireguard/wg0.conf";
+  # };
+  # wg1 = {
+  # configFile = "/etc/wireguard/wg1.conf";
+  # };
+  #};
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
 
@@ -73,18 +81,40 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  
 
-  environment.gnome.excludePackages = (with pkgs; [
-  gnome-photos
-  gnome-tour
-  epiphany # web browser
-  geary # email reader
-  evince # document viewer
-  gnome-characters
-  gnome-contacts
-  gnome-weather
-]);
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      pkgs.baobab
+      pkgs.epiphany
+      pkgs.gnome-text-editor
+      pkgs.gnome-calculator
+      pkgs.gnome-calendar
+      pkgs.gnome-characters
+      pkgs.gnome-clocks
+      pkgs.gnome-console
+      pkgs.gnome-contacts
+      pkgs.gnome-font-viewer
+      pkgs.gnome-logs
+      pkgs.gnome-maps
+      pkgs.gnome-music
+      pkgs.gnome-system-monitor
+      pkgs.gnome-weather
+      pkgs.loupe
+      pkgs.papers
+      pkgs.gnome-connections
+      pkgs.showtime
+      pkgs.simple-scan
+      pkgs.snapshot
+      pkgs.yelp
+    ]
+  );
+
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita-dark";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -119,20 +149,27 @@
   users.users.varo = {
     isNormalUser = true;
     description = "0xCAB0";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;
   };
-
-  fonts.packages = with pkgs; [
-        nerd-fonts.hack
-        nerd-fonts.fira-code
-  ];
+  
+  fonts = {
+	fontDir.enable = true;
+  	packages = with pkgs; [
+    		nerd-fonts.hack
+    		nerd-fonts.fira-code
+  	];
+  };
 
   home-manager = {
-   extraSpecialArgs = {inherit inputs;};  
-   users."varo" = import ./varo/home.nix;
+    extraSpecialArgs = { inherit inputs; };
+    users."varo" = import ./varo/home.nix;
 
   };
 
@@ -142,7 +179,6 @@
   virtualisation.docker = {
     enable = true;
   };
-
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -155,16 +191,17 @@
     wget
     curl
     git
-    just 
+    just
     tree
     neovim
     libreoffice-qt
     unzip
     zip
     flatpak
-  ## Browsers
-   firefox
-   brave
+    ## Browsers
+    firefox
+    brave
+    nixfmt
   ];
 
   # This value determines the NixOS release from which the default
@@ -174,7 +211,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-  
+
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
 
