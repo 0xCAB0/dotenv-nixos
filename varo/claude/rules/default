@@ -1,0 +1,15 @@
+{
+  code-style = ''
+    # Code Style Guidelines
+
+    - Use consistent formatting
+    - Follow language conventions
+  '';
+  testing = ''
+    # Testing Conventions
+
+    - Write tests for all new features
+    - Maintain test coverage above 80%
+  '';
+  security = ./rules/security.md;
+}
