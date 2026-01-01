@@ -31,19 +31,19 @@
 ########## LSP and completions ############
         {
             plugin = nvim-lspconfig;
-            config = readFile ./nvim/plugins/lsp.lua;
+            config = readFile ./plugins/lsp.lua;
         }
 
         {
             plugin = nvim-cmp;
-            config = readFile ./nvim/plugins/cmp.lua;
+            config = readFile ./plugins/cmp.lua;
         }
         cmp-nvim-lsp
             neodev-nvim
         
         {
             plugin = nvim-autopairs;
-            config = readFile ./nvim/plugins/autopairs.lua;
+            config = readFile ./plugins/autopairs.lua;
         }
 
 #### Rust vim plugins ####
@@ -61,7 +61,7 @@
 ############# Telescope ###############
             {
                 plugin = telescope-nvim;
-                config = readFile ./nvim/plugins/telescope.lua;
+                config = readFile ./plugins/telescope.lua;
             }
         telescope-fzf-native-nvim
 
@@ -79,7 +79,7 @@
                         p.tree-sitter-markdown
                         p.tree-sitter-just
             ]));
-            config = readFile ./nvim/plugins/treesitter.lua;
+            config = readFile ./plugins/treesitter.lua;
         }
 
         {
@@ -105,7 +105,7 @@
 
         ];
 
-        extraLuaConfig = ''${builtins.readFile ./nvim/options.lua}'';
+        extraLuaConfig = ''${builtins.readFile ./options.lua}'';
     };
 
 }

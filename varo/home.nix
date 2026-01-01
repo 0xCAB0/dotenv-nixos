@@ -37,6 +37,7 @@
   };
 
   home.shellAliases = {
+  	edit = "nvim";
 	cd = "z";
         nixos-update = "just -f /etc/nixos/justfile switch";
         create_flake = "$ echo \"use flake\" >> .envrc && direnv allow";
@@ -51,16 +52,15 @@
   ];
   
   imports = [
-    ./zsh/zsh.nix
-    ./oh-my-posh/oh-my-posh.nix
-    ./direnv/direnv.nix
-    ./nvim.nix
-    ./vscode/vscode.nix
-    ./git.nix
-    ./tmux.nix
-    ./alacritty.nix
-    ./helix.nix
-    ./zed/zed.nix
+    ./v2/zsh/zsh.nix
+    ./v2/oh-my-posh/oh-my-posh.nix
+    ./v2/direnv/direnv.nix
+    ./v2/nvim/nvim.nix
+    ./v2/vscode/vscode.nix
+    ./v2/git/git.nix
+    ./v2/tmux/tmux.nix
+    ./v2/alacritty/alacritty.nix
+    ./v2/claude/claude.nix
   ];	
 
 }
