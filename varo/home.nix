@@ -39,8 +39,6 @@
   home.shellAliases = {
   	edit = "nvim";
 	cd = "z";
-        nixos-update = "just -f /etc/nixos/justfile switch";
-        create_flake = "$ echo \"use flake\" >> .envrc && direnv allow";
   };
 
   programs.home-manager.enable = true;
