@@ -33,9 +33,6 @@
 
   # Bootloader.
   boot.loader = {
-    generationsDir = {
-      enable = true;
-    };
     efi = {
       canTouchEfiVariables = false;
       efiSysMountPoint = "/boot/EFI";
