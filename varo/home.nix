@@ -19,6 +19,7 @@
     discord
     telegram-desktop
     vscode
+    obsidian
   ];
 
   home.file = {
