@@ -15,8 +15,8 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
- 
-  # Enable mDNS  
+
+  # Enable mDNS
   services.avahi = {
     enable = true;
     nssmdns4 = true; # Enable mDNS resolution in NSS (Name Service Switch)
@@ -33,15 +33,21 @@
 
   # Bootloader.
   boot.loader = {
+    generationsDir = {
+      enable = true;
+    };
     efi = {
       canTouchEfiVariables = false;
       efiSysMountPoint = "/boot/EFI";
     };
     grub = {
+      enable = true;
+      copyKernels = true;
       efiInstallAsRemovable = true;
       efiSupport = true;
       useOSProber = true;
       device = "nodev";
+      fsIdentifier = "label";
       extraEntriesBeforeNixOS = true;
       theme = "/etc/nixos/assets/fallout-grub-theme";
     };
@@ -173,13 +179,13 @@
     ];
     shell = pkgs.zsh;
   };
-  
+
   fonts = {
-	fontDir.enable = true;
-  	packages = with pkgs; [
-    		nerd-fonts.hack
-    		nerd-fonts.fira-code
-  	];
+    fontDir.enable = true;
+    packages = with pkgs; [
+      nerd-fonts.hack
+      nerd-fonts.fira-code
+    ];
   };
 
   home-manager = {

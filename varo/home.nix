@@ -23,22 +23,25 @@
 
   home.file = {
   };
-  
+
   home.sessionVariables = {
     EDITOR = "nvim";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   fonts.fontconfig.enable = true;
 
   programs.neovim = {
-  	viAlias = true;
-  	vimAlias = true;
+    viAlias = true;
+    vimAlias = true;
   };
 
   home.shellAliases = {
-  	edit = "nvim";
-	cd = "z";
+    edit = "nvim";
+    cd = "z";
   };
 
   programs.home-manager.enable = true;
@@ -46,9 +49,9 @@
   programs.zoxide.enable = true;
   programs.zoxide.enableZshIntegration = true;
   programs.zoxide.options = [
-  "--cmd cd"
+    "--cmd cd"
   ];
-  
+
   imports = [
     ./v2/zsh/zsh.nix
     ./v2/oh-my-posh/oh-my-posh.nix
@@ -59,6 +62,6 @@
     ./v2/tmux/tmux.nix
     ./v2/alacritty/alacritty.nix
     ./v2/claude/claude.nix
-  ];	
+  ];
 
 }
