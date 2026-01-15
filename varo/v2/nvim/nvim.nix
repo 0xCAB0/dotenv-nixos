@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, ... }:
 
 {
 
@@ -39,7 +39,14 @@
         }
         cmp-nvim-lsp
         neodev-nvim
-
+        {
+          plugin = inputs.mcphub-nvim.packages.${system}.default;
+          config = ''
+            lua << EOF
+            require("mcphub").setup()
+            EOF
+          '';
+        }
         {
           plugin = nvim-autopairs;
           config = readFile ./plugins/autopairs.lua;

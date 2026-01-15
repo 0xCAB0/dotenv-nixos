@@ -13,7 +13,7 @@
       url = "github:nix-community/NixOS-WSL/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    mcphub-nvim.url = "github:ravitemer/mcphub.nvim";
     ngrok.url = "github:ngrok/ngrok-nix";
     plugin-onedark.url = "github:navarasu/onedark.nvim";
     plugin-onedark.flake = false;
@@ -33,6 +33,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs system; };
           home-manager.users.varo = ./varo/home.nix;
         }
       ];
