@@ -43,7 +43,9 @@
           plugin = inputs.mcphub-nvim.packages.${system}.default;
           config = ''
             lua << EOF
-            require("mcphub").setup()
+            require("mcphub").setup({
+              cmd = os.getenv("HOME") .. "/.npm-global/bin/mcp-hub"
+            })
             EOF
           '';
         }

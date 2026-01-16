@@ -63,6 +63,7 @@
     ./v2/tmux/tmux.nix
     ./v2/alacritty/alacritty.nix
     ./v2/claude/claude.nix
+    ./v2/node/node.nix
   ];
 
 }
