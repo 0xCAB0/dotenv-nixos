@@ -14,6 +14,7 @@
     xclip
     just
     zoxide
+    copyq
     # Desktop application
     protonvpn-gui
     discord
