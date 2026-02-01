@@ -15,6 +15,7 @@
     just
     zoxide
     copyq
+    hugo
     # Desktop application
     protonvpn-gui
     discord
